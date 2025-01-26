@@ -1,0 +1,68 @@
+.header{
+    min-height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 3;
+    padding-top: 5px;
+    font-weight: 500;
+    font-size: large;
+    box-shadow: inset;
+    height: 10%;
+    margin-bottom: 15px;
+}
+.header-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-1-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    margin-left: 75px;
+    gap: 15px;
+}
+
+.name-logo {
+    font-weight: 700;
+    font-size: large;
+}
+
+.header-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obj-center{
+    display: flex;
+    margin-right: 42px;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-logo{
+    height: 45px;
+    mix-blend-mode:lighten;
+    transform: rotate(90deg)
+}
+
+.book-button{
+    background-color: #8b7bf3;
+    border-radius: 5px;
+    font-size: large;
+    padding: 5px 10px 5px 10px;
+}
+
+.book-button:hover{
+    cursor: pointer;
+    background-color: #7461f0;
+}
+
+
+

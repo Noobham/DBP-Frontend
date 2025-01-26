@@ -1,0 +1,14 @@
+.footer-block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 3px 50px 10px 50px;
+    border: solid rgba(139, 123, 243, 0.2) 3px ;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.footer-logo{
+    height: 125px;
+    width: 125px;
+}

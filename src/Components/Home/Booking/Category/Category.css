@@ -1,0 +1,24 @@
+.cat-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: solid rgba(139, 123, 243, 0.2) 2px;
+    height: 200px;
+    width: 240px;
+    border-radius: 4px;
+    /* background-image: url('src/assets/Skin-care.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-origin: border-box; */
+
+}
+.cat-block:hover{
+    background-color: rgba(116, 97, 240,0.2);
+    background-origin: border-box;
+    
+}
+  

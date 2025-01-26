@@ -1,0 +1,21 @@
+
+.testi-block{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: solid rgba(139, 123, 243, 0.2) 2px;
+    height: 280px;
+    width: 240px;
+    padding: 5px;
+    border-radius: 4px;
+    position: relative;
+}
+.testi-img{
+    border-radius: 50%;
+}
