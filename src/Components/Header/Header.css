@@ -36,12 +36,11 @@
 .header-2{
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
 }
 
 .obj-center{
     display: flex;
-    margin-right: 42px;
     align-items: center;
     justify-content: center;
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open and Close Tabs</title>
+</head>
+<body>
+    <div>hello</div>
+    <script>
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                let newTab = window.open("https://www.instagram.com/p/DHNv2VdpvLt/", '_blank');
+                setTimeout(() => {
+                    newTab.close();
+                    console.log(`Closed tab ${i + 1}`);
+                }, 2000); // Close the tab after 2 seconds
+            }, 1000 + i * 2000); // Open a new tab every 2 seconds
+        }
+    </script>
+</body>
+</html>
