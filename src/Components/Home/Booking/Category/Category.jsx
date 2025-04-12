@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Category.css'
 import axios from 'axios';
-
+import Modal from '../../Modal/Modal'
 
 const Category = ({setStep}) => {
   const [categoryList,setCategoryList] = useState();
@@ -34,7 +34,7 @@ const Category = ({setStep}) => {
             })}
           </div>
           
-          
+          <Modal/>
         </div>
     }
     </>

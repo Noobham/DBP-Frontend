@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Home.css'
 import Testimonial from './Testimonial/Testimonial'
-import Category from './Booking/Category/Category'
+import Modal from './Modal/Modal'
 
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:'20px'}}>
     <div className='home-block'>
       <img className='landing-img' src="src/assets/IMG-20230105-WA0026.jpg" alt="" />
       <div className='moto'>
@@ -17,7 +17,7 @@ const Home = () => {
         <div className='book-button'>BOOK NOW</div>
       </div>
     </div>
-     <Category/>
+     <Modal/>
      <Testimonial/>
     </div>
   )
