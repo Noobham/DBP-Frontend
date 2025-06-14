@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie';
 import CartProduct from './CartProduct';
 import { Button } from '@chakra-ui/icons';
+import axios from 'axios';
 
 export const Cart = () => {
     const [cartList, setCartList] = useState();
@@ -29,8 +30,20 @@ export const Cart = () => {
           name: 'Your Company Name',
           description: 'Test Transaction',
           order_id: data.id,
-          handler: function (response) {
+          handler: async function (response) {
             alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+            console.log('Payment response:', response);
+            await axios.post('http://localhost:8080/book', {
+              orderId: data.id,
+              paymentId: response.razorpay_payment_id,
+              status:'booked',
+              serviceId: cookies.productId
+            }).then((response) => {
+              console.log('Payment verification response:', response.data);
+              setCookies('productId', []);
+            }).catch((error) => {
+              console.error('Error verifying payment:', error);
+            });
             // Optionally verify the signature with your backend
           },
           prefill: {
