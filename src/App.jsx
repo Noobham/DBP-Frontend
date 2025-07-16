@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer'
 import Category from './Components/Home/Booking/Category/Category'
 import { Route, Routes } from 'react-router-dom'
 import { Cart } from './Components/Home/Cart/Cart'
+import Login from './Components/Home/Login/Login'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
      <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/login' element={<Login/>}/>
      </Routes>
      <Footer/>
     </>
