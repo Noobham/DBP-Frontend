@@ -1,103 +1,131 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import Layout from './component/Layout';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Layout>
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-[#e0ecf8] via-[#f8f9fb] to-white px-6 py-20 rounded-2xl">
+          <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            {/* Left Content */}
+            <div className="text-center md:text-left max-w-xl flex flex-col items-center">
+              <h1 className="text-5xl font-extrabold text-[#243c74] leading-tight">
+                Diamond Beauty
+              </h1>
+              <h2 className="text-2xl font-semibold text-[#5271a3] mt-2">
+                Your Beauty, Our Passion
+              </h2>
+              <p className="mt-4 text-[#405d86]">
+                Discover elegance and confidence with our expert beauty treatments. Feel radiant every day.
+              </p>
+              <Link
+                href="/services"
+                className="inline-block mt-8 bg-[#5271a3] text-white px-6 py-3 rounded-full shadow hover:bg-[#3d5b91] transition"
+              >
+                Book Now
+              </Link>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            {/* Right Image */}
+            <div className="w-full md:w-1/2">
+              <Image
+                src="/girl.png"
+                alt="Beauty Salon Hero"
+                width={500}
+                height={500}
+                className="rounded-xl shadow-lg object-cover w-full h-auto"
+              />
+            </div>
+          </div>
+        </section> 
+
+
+        {/* About Section */}
+        <section id="about" className="py-16 px-6 bg-white text-center">
+          <h2 className="text-3xl font-semibold text-blue-700">About Us</h2>
+          <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+            At Diamond Beauty Parlour, we bring out the beauty that shines from within. With over a decade of experience, we offer top-tier services in bridal makeup, hair styling, and skincare — all tailored to make you feel your absolute best.
+          </p>
+        </section>
+
+      
+        {/* Services Section */}
+        <section id="services" className="bg-[#e0ecf8] py-15 px-6 rounded-2xl">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#243c74] mb-4">Our Services</h2>
+            <p className="text-[#405d86] mb-10 max-w-2xl mx-auto text-lg">
+              Discover our range of personalized beauty services designed to enhance your natural glow.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                'Bridal Makeup',
+                'Hair Styling',
+                'Facials',
+                'Manicure & Pedicure',
+                'Party Makeup',
+                'Skin Treatments'
+              ].map((service, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition text-left">
+                  <h3 className="text-xl font-semibold text-[#243c74] mb-2">{service}</h3>
+                  <p className="text-[#405d86] text-sm">
+                    Experience our expert {service.toLowerCase()} to enhance your natural beauty.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* Gallery Section */}
+        <section id="gallery" className="py-16 px-6 bg-white">
+          <h2 className="text-3xl font-semibold text-blue-700 text-center mb-10">Gallery</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[1, 2, 3, 4].map((img) => (
+              <div key={img} className="overflow-hidden rounded-xl">
+                <Image
+                  src={`/images/gallery${img}.jpg`}
+                  alt={`Gallery image ${img}`}
+                  width={300}
+                  height={300}
+                  className="object-cover w-full h-full hover:scale-105 transition-transform"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-16 px-6 bg-blue-100 text-center">
+          <h2 className="text-3xl font-semibold text-blue-700">Get in Touch</h2>
+          <p className="mt-4 text-gray-700">Book your appointment or ask a question — we’d love to hear from you!</p>
+          <form className="mt-8 max-w-xl mx-auto space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            />
+            <textarea
+              placeholder="Your Message"
+              rows={4}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            />
+            <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+              Send Message
+            </button>
+          </form>
+        </section>
+
+        
+      </Layout>
+    </>
   );
 }
